@@ -1,0 +1,60 @@
+.row {
+	// Corrige problema que provoca aparición de scroll horizontal en pequeñas pantallas
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.parallax {
+	--background-image: url('/cover.webp');
+	background-image: var(--background-image);
+	background-color: rgba(32, 44, 70, 0.5);
+	background-blend-mode: multiply;
+
+	height: 100%;
+
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	-webkit-box-shadow: inset 0px 0px 97px 10px rgba(0,0,0,0.85);
+	box-shadow: inset 0px 0px 97px 10px rgba(0,0,0,0.85);
+}
+
+.wrapper {
+	margin: 0;
+	padding: 0;
+}
+
+.bg-gray {
+	background-color: #e5e9ed;
+}
+
+.section-title {
+	color: $primary;
+	font-size: 3.2rem;
+}
+
+@media only screen and (max-device-width: 1024px) {
+	.parallax {
+		background-attachment: fixed;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.hero-dumb {
+		margin-top: 0;
+		
+		& > img {
+			width: 40%;
+		}
+	}
+
+	.hero-info {
+		margin-top: 1.4rem;
+	}
+
+	.parallax {
+		text-align: center;
+	}
+}

@@ -1,0 +1,153 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import LoadScripts from "../components/LoadScripts.astro";
+import Hero2 from "../components/Hero2.astro";
+import SectionSlider from "../components/SectionSlider.astro";
+import SectionSliderReverse from "../components/SectionSliderReverse.astro";
+import CallNow from "../components/CallNow.astro";
+import SectionTwo from "../components/SectionTwo.astro";
+import SectionThree from "../components/SectionThree.astro";
+import SliderComponent from "../components/SliderComponent.astro";
+import MoreJobs from "../components/MoreJobs.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<Hero2 
+				title="NUESTROS TRABAJOS"
+				description="¡Nuestros trabajos hablan por nosotros!"
+			/>
+
+			<div class="bg-gray" style="padding: 1.5rem 0; margin: 0;"></div>
+
+			<SectionTwo
+				title="Renovación de Cocina"
+				description="¡Renovamos tu cocina! Hemos modernizado la cocina al completo, transformándola en un espacio funcional y elegante. Con acabados de alta calidad, hemos combinado gabinetes blancos de diseño minimalista con madera natural, aportando calidez y modernidad. La encimera de superficie lisa y fácil de limpiar ofrece un toque sofisticado, mientras que los electrodomésticos integrados optimizan cada rincón del espacio. La iluminación LED debajo de los gabinetes proporciona un ambiente práctico y moderno, perfecto para disfrutar cada momento en la cocina. ¡Porque siempre estamos atentos hasta el último detalle!"
+				images={[
+					{src:"/gallery/IMG-20240919-WA0016.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0009.webp", alt:"..."},
+				]}
+			/>
+
+			<div class="bg-gray" style="padding: 1rem 0; margin: 0;"></div>
+
+			<SectionThree
+				title="Fontanería y Reforma de Baño Público"
+				description="¡Transformamos el baño público en un espacio moderno y funcional! Ahora cuenta con lavabos de diseño contemporáneo, espejos amplios y un urinario discretamente integrado. La fontanería se ha renovado completamente para garantizar un funcionamiento óptimo y sin problemas. Los acabados en tonos neutros aportan elegancia y limpieza, creando un ambiente cómodo y acogedor para todos."
+				images={[
+					{src:"/gallery/IMG-20240711-WA0020.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0022.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0029.webp", alt:"..."},
+				]}
+			/>
+
+			<div class="bg-gray" style="padding: 1rem 0; margin: 0;"></div>
+
+			<SectionTwo
+				title="Fontanería y Reforma Integral del Baño"
+				description="¡Transformamos tu baño en un espacio moderno y funcional! Nuestro equipo realizó una reforma integral, instalando una nueva grifería, sanitario, lavabo y bañera. Los acabados de alta calidad y el diseño contemporáneo aseguran un ambiente elegante y confortable. Confía en nosotros para convertir tu baño en un espacio de relajación y estilo."
+				images={[
+					{src:"/gallery/IMG-20240711-WA0016.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0015.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0014.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0005.webp", alt:"..."},
+				]}
+			/>
+
+			<div class="bg-gray" style="padding: 1rem 0; margin: 0;"></div>
+
+			<SectionTwo
+				title="Modernización del Baño"
+				description="¡Nos gustan los desafíos! Estamos pendientes de todas tus demandas, ¡con seriedad y compromiso reformamos tu baño al de tus sueños!. La elección de amplias losas junto a una paleta de colores monocromático garantizan un ambiente elegante y confortable. Sorprende a todos con un baño de acabados de alta calidad."
+				images={[
+					{src:"/gallery/IMG-20240919-WA0017.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0012.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0002.webp", alt:"..."},
+				]}
+			/>
+
+			<div class="bg-gray" style="padding: 2rem 0; margin: 0;"></div>
+
+			<CallNow title="Estamos comprometidos a brindarte el mejor servicio" button="¡Llámenos!" link="/contacto" />
+
+			<div class="bg-gray" style="padding: 2rem 0; margin: 0;"></div>
+
+			<SectionSlider 
+				title="Reparación de Radiador"
+				description="¡Reparamos tu radiador para un funcionamiento óptimo! Nuestro fontanero reemplazó las válvulas defectuosas y ajustó las conexiones, garantizando una calefacción eficiente y sin fugas. Ahora tu radiador está como nuevo, listo para mantener tu hogar cálido y confortable. Confía en nuestra experiencia para soluciones rápidas y duraderas."
+				images={[
+					{src:"/gallery/IMG-20240711-WA0011.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0005.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0004.webp", alt:"..."},
+				]}
+				id="slider01"
+			/>
+
+			<div class="wrapper bg-gray pb-3">
+				<div class="container px-2 py-2">
+					<div class="row">
+						<div class="col-12 col-md-6 py-4">
+							<SliderComponent
+								title="Reparación de Tuberías"
+								description="¡Modernizamos tu sistema de tuberías! Nuestro equipo realizó una reforma completa utilizando tuberías multicapa y conexiones Gebo, garantizando durabilidad y resistencia. Con técnicas avanzadas, aseguramos un flujo de agua eficiente y sin fugas. Confía en nuestra experiencia para una instalación segura y de alta calidad en tu hogar."
+								images={[
+									{src:"/gallery/IMG-20240711-WA0009.webp", alt:"..."},
+									{src:"/gallery/IMG-20240711-WA0010.webp", alt:"..."},
+								]}
+								id="slider02"
+							/>
+						</div>
+
+						<div class="col-12 col-md-6 py-4">
+							<SliderComponent
+								title="Montaje de Caldera y Reforma"
+								description="¡Mejora tu confort con nuestra instalación de calderas! Hemos realizado una reforma completa de la caldera, asegurando un rendimiento eficiente y seguro. Con una instalación profesional y materiales de alta calidad, disfrutarás de un sistema de calefacción confiable y duradero. Confía en nosotros para mantener tu hogar cálido y acogedor."
+								images={[
+									{src:"/gallery/IMG-20240711-WA0003.webp", alt:"..."},
+									{src:"/gallery/IMG-20240711-WA0002.webp", alt:"..."},
+									{src:"/gallery/IMG-20240711-WA0001.webp", alt:"..."},
+									{src:"/gallery/IMG-20240711-WA0000.webp", alt:"..."},
+								]}
+								id="slider03"
+							/>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<SectionSliderReverse
+				title="Reparación de Bajante"
+				description="Nuestro equipo ha realizado una reparación de la bajante, asegurando un flujo de agua sin obstrucciones. Utilizando materiales de alta calidad y técnicas avanzadas, ha garantizado la durabilidad y eficiencia del sistema. Con un acabado limpio y profesional, nuestra intervención asegura tranquilidad y funcionalidad a largo plazo. Confíe en nuestros servicios para soluciones rápidas y efectivas."
+				images={[
+					{src:"/gallery/VID-20240712-WA0000.mp4_snapshot_00.00.335.webp", alt:"..."},
+					{src:"/gallery/VID-20240712-WA0001.mp4_snapshot_00.00.667.webp", alt:"..."},
+				]}
+				id="slider04"
+			/>
+
+			<div class="bg-gray" style="padding: .25rem 0; margin: 0;"></div>
+
+			<MoreJobs 
+					title="Descubra más de nuestro trabajo en nuestra galería"
+					button="¡Visite nuestra galería!"
+					link="/"
+			/>
+
+			<div class="bg-gray" style="padding: 1rem 0; margin: 0;"></div>
+
+		</main>
+		<Footer />
+		<LoadScripts />
+	</body>
+</html>

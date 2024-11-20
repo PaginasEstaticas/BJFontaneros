@@ -1,0 +1,45 @@
+---
+ const { title, description, button, link, images, id } = Astro.props
+---
+
+<div class="wrapper bg-gray pb-5">
+	<div class="container px-2 py-3">
+		<div class="row align-items-center">
+			<div class="col-12 col-lg-6">
+				  <div id={ id ? id : "carouselExampleRide" } class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						{images.map((image, index) => (
+							<div 
+							  class={`carousel-item ${index === 0 ? "active" : ""}`} 
+							>
+							  <img 
+								src={image.src} 
+								class="d-block w-100" 
+								alt={image.alt} 
+							  />
+							</div>
+						  ))}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target={ id ? "#" + id : "#carouselExampleRide" } data-bs-slide="prev">
+					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target={ id ? "#" + id : "#carouselExampleRide" } data-bs-slide="next">
+					  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					</button>
+				  </div>
+			</div>
+			<div class="col-12 col-lg-6">
+				<div class="row align-items-center">
+					<h3 class="fs-1 pt-3 pb-4 text-primary">{ title }</h3>
+					<p>{description }</p>
+					{ button
+						&& <a class="btn btn-primary mt-4" href={ link } role="button">{ button }</a>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+</style>

@@ -1,0 +1,72 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import LoadScripts from "../components/LoadScripts.astro";
+import Hero2 from "../components/Hero2.astro";
+import SectionInfo from "../components/SectionInfo.astro";
+import SectionSlider from "../components/SectionSlider.astro";
+import SectionSliderReverse from "../components/SectionSliderReverse.astro";
+import CallNow from "../components/CallNow.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<Hero2 
+				title="TAMBIÉN OFRECEMOS REFORMAS"
+				description="Porque entendemos que la fontanería no termina en las tuberías"
+			/>
+
+			<SectionInfo 
+				title="REFORMAS A MEDIDA"
+				text1="En nuestro compromiso de proporcionar un servicio excepcional, entendemos que a veces los trabajos de fontanería pueden requerir más que una simple reparación. Por eso, no nos limitamos a solucionar problemas de fontanería, sino que también ofrecemos servicios de reformas a medida."
+				text2="Ya sea que necesites una pequeña modificación o una renovación completa, ¡estamos preparados para manejarlo!"
+				text3="Nuestro equipo de expertos está equipado con las habilidades y la experiencia necesarias para llevar a cabo reformas de alta calidad, garantizando que el resultado final supere tus expectativas. Porque en nuestro trabajo, cada detalle cuenta, y tu satisfacción es nuestra prioridad."
+			/>
+
+			<SectionSlider 
+				title="Reforma de baño público"
+				description="Hemos realizado la fontanería del baño público, acompañado de una reforma integral del baño, cuidando hasta el mínimo detalle y estética. Garantizando acabados de alta calidad y sin descuidar la eficiencia y la armonía en los espacios y colores. Porque estamos comprometidos en brindar un resultado profesional y moderno. Nuesto sello de calidad."
+				button="¡Vea nuestros trabajos!"
+				link="/proyectos"
+				images={[
+					{src:"/gallery/IMG-20240711-WA0029.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0026.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0022.webp", alt:"..."},
+					{src:"/gallery/IMG-20240711-WA0020.webp", alt:"..."},
+				]}
+				id="slider01"
+			/>
+
+			
+			<SectionSliderReverse
+				title="Reforma de integral de vivienda"
+				description="Desde el cambio completo del parquet, de las puertas, ¡hasta el pintado de las paredes! Hemos transformado este hogar con un parquet elegante que añade calidez a cada estancia, acompañado de puertas blancas que aportan luminosidad y un estilo moderno y atemporal. Las paredes, también blancas, crean un ambiente limpio y espacioso, realzadas por molduras de escayola en las esquinas del techo, que añaden un toque de sofisticación clásica."
+				button="¡Vea nuestros trabajos!"
+				link="/proyectos"
+				images={[
+					{src:"/gallery/IMG-20240919-WA0005.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0004.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0006.webp", alt:"..."},
+					{src:"/gallery/IMG-20240919-WA0007.webp", alt:"..."},
+				]}
+				id="slider02"
+			/>
+
+			<div class="bg-gray" style="padding: 2rem 0; margin: 0;"></div>
+
+			<CallNow title="¡Realizamos reformas profesionales completas a medida!" button="¡Pida su presupuesto!" link="/contacto" />
+
+		</main>
+		<Footer />
+		<LoadScripts />
+	</body>
+</html>
