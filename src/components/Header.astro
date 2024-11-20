@@ -1,23 +1,24 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { buildUrl } from '../helpers/url';
 
 const currentPath = Astro.url.pathname;
 const pages = [
-	{ name: "Fontanería", href: "/" },
-	{ name: "Reformas", href: "/reformas" },
-	{ name: "Proyectos", href: "/proyectos" },
-	{ name: "Contacto", href: "/contacto" },
+	{ name: "Fontanería", href: buildUrl("/") },
+	{ name: "Reformas", href: buildUrl("/reformas") },
+	{ name: "Proyectos", href: buildUrl("/proyectos") },
+	{ name: "Contacto", href: buildUrl("/contacto") },
 ];
 ---
 
 <header>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
-			<a class="navbar-brand fw-light" href="/">
+			<a class="navbar-brand fw-light" href={buildUrl("/")}>
 				<img
-					src="/brand.svg"
-					alt="B & J"
+					src={buildUrl("/brand.svg")}
+					alt="BJ"
 					width="40"
 					height="40"
 					class="d-inline-block align-text-center"
@@ -43,8 +44,8 @@ const pages = [
 				<div class="offcanvas-header">
 					<h5 class="offcanvas-title fw-light" id="offcanvasNavbarLabel">
 						<img
-							src="/brand.svg"
-							alt="B & J"
+							src={buildUrl("/brand.svg")}
+							alt="BJ"
 							width="40"
 							height="40"
 							class="d-inline-block align-text-center"
@@ -66,7 +67,7 @@ const pages = [
 							  <a 
 								href={page.href} 
 								class={
-								  page.href === '/contacto' 
+								  page.name === 'Contacto' 
 									? (currentPath === page.href ? 'nav-link active' : 'nav-link btn btn-outline-primary contact-link')
 									: (currentPath === page.href ? 'nav-link active' : 'nav-link')
 								}

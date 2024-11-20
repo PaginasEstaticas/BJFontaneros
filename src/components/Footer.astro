@@ -1,5 +1,6 @@
 ---
 const today = new Date();
+import { buildUrl } from '../helpers/url';
 ---
 
 <footer class="bg-primary">
@@ -8,7 +9,7 @@ const today = new Date();
 			<div class="col-12 col-md-6 pb-5">
 				<h2 class="fs-1 text-light pb-3">¡Estamos comprometidos a brindarte el mejor servicio!</h2>
 				<div class="d-grid gap-2 py-4">
-					<a class="btn btn-secondary" href="/contacto" role="button">¡Contáctenos!</a>
+					<a class="btn btn-secondary" href={buildUrl("/contacto")} role="button">¡Contáctenos!</a>
 				</div>
 			</div>
 			<div class="col-12 col-md-5 offset-md-1">

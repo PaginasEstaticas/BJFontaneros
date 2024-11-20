@@ -10,6 +10,7 @@ import SectionSliderReverse from "../components/SectionSliderReverse.astro";
 import CallNow from "../components/CallNow.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { buildUrl } from '../helpers/url';
 ---
 
 <!doctype html>
@@ -36,12 +37,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				title="Reforma de baño público"
 				description="Hemos realizado la fontanería del baño público, acompañado de una reforma integral del baño, cuidando hasta el mínimo detalle y estética. Garantizando acabados de alta calidad y sin descuidar la eficiencia y la armonía en los espacios y colores. Porque estamos comprometidos en brindar un resultado profesional y moderno. Nuesto sello de calidad."
 				button="¡Vea nuestros trabajos!"
-				link="/proyectos"
+				link={buildUrl("/proyectos")}
 				images={[
-					{src:"/gallery/IMG-20240711-WA0029.webp", alt:"..."},
-					{src:"/gallery/IMG-20240711-WA0026.webp", alt:"..."},
-					{src:"/gallery/IMG-20240711-WA0022.webp", alt:"..."},
-					{src:"/gallery/IMG-20240711-WA0020.webp", alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240711-WA0029.webp"), alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240711-WA0026.webp"), alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240711-WA0022.webp"), alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240711-WA0020.webp"), alt:"..."},
 				]}
 				id="slider01"
 			/>
@@ -51,19 +52,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				title="Reforma de integral de vivienda"
 				description="Desde el cambio completo del parquet, de las puertas, ¡hasta el pintado de las paredes! Hemos transformado este hogar con un parquet elegante que añade calidez a cada estancia, acompañado de puertas blancas que aportan luminosidad y un estilo moderno y atemporal. Las paredes, también blancas, crean un ambiente limpio y espacioso, realzadas por molduras de escayola en las esquinas del techo, que añaden un toque de sofisticación clásica."
 				button="¡Vea nuestros trabajos!"
-				link="/proyectos"
+				link={buildUrl("/proyectos")}
 				images={[
-					{src:"/gallery/IMG-20240919-WA0005.webp", alt:"..."},
-					{src:"/gallery/IMG-20240919-WA0004.webp", alt:"..."},
-					{src:"/gallery/IMG-20240919-WA0006.webp", alt:"..."},
-					{src:"/gallery/IMG-20240919-WA0007.webp", alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240919-WA0005.webp"), alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240919-WA0004.webp"), alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240919-WA0006.webp"), alt:"..."},
+					{src:buildUrl("/gallery/IMG-20240919-WA0007.webp"), alt:"..."},
 				]}
 				id="slider02"
 			/>
 
 			<div class="bg-gray" style="padding: 2rem 0; margin: 0;"></div>
 
-			<CallNow title="¡Realizamos reformas profesionales completas a medida!" button="¡Pida su presupuesto!" link="/contacto" />
+			<CallNow title="¡Realizamos reformas profesionales completas a medida!" button="¡Pida su presupuesto!" link={buildUrl("/contacto")} />
 
 		</main>
 		<Footer />

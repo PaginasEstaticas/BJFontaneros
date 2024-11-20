@@ -1,20 +1,22 @@
 ---
 	import Card from "./Card.astro"
 	const { title } = Astro.props
+
+	import { buildUrl } from '../helpers/url';
 ---
 
 <div class="wrapper bg-gray pb-5">
 <div class="container px-2 py-5">
 	<h2 class="fw-bold section-title pb-5 pt-2">{ title }</h2>
 	<div class="row">
-		<Card image="/leak.webp" title="Desatrancos" description="Nos encargamos de todo tipo de desatrancos, tanto dentro como fuera de casa. Sin obras." />
-		<Card image="/plumbering.webp" title="Grifería" description="Sustitución y reparación de todo tipo de grifería. Realizamos una reparación rápida, y con la máxima calidad." />
-		<Card image="/underfloor-heating.webp" title="CALEFACCIÓN Y CALDERAS" description="Ponemos a punto su sistema de calefacción, y su caldera. También realizamos la sustitución de su caldera." />
-		<Card image="/toilet.webp" title="REPARACIÓN DE CISTERNAS" description="Cambiamos o reparamos el mecanismo de su cisterna, revisamos su instalación, y si es necesario, sustituímos su WC." />
-		<Card image="/toilet_mix.webp" title="RENUEVE SU BAÑO" description="Realizamos la reforma de su baño, cocina, o incluso su casa entera. Pidanos presupuesto sin compromismo." />
-		<Card image="/leak_fuge.webp" title="FUGAS DE GAS" description="Reparamos tuberías dañadas, y las sustituímos en caso necesario. Todo de una forma limpia, y rápida." />
-		<Card image="/plumbering_gr.webp" title="FUGAS DE AGUA" description="Reparamos todo tipo de fugas de agua, roturas, y averías que usted pueda sufrir en su suministro de agua." />
-		<Card image="/24h.webp" title="DISPONIBILIDAD 24H" description="Estamos disponibles las 24 horas del día, y 7 días a la semana. Le ofrecemos soluciones cuando más lo necesita." />
+		<Card image={buildUrl("/leak.webp")} title="Desatrancos" description="Nos encargamos de todo tipo de desatrancos, tanto dentro como fuera de casa. Sin obras." />
+		<Card image={buildUrl("/plumbering.webp")} title="Grifería" description="Sustitución y reparación de todo tipo de grifería. Realizamos una reparación rápida, y con la máxima calidad." />
+		<Card image={buildUrl("/underfloor-heating.webp")} title="CALEFACCIÓN Y CALDERAS" description="Ponemos a punto su sistema de calefacción, y su caldera. También realizamos la sustitución de su caldera." />
+		<Card image={buildUrl("/toilet.webp")} title="REPARACIÓN DE CISTERNAS" description="Cambiamos o reparamos el mecanismo de su cisterna, revisamos su instalación, y si es necesario, sustituímos su WC." />
+		<Card image={buildUrl("/toilet_mix.webp")} title="RENUEVE SU BAÑO" description="Realizamos la reforma de su baño, cocina, o incluso su casa entera. Pidanos presupuesto sin compromismo." />
+		<Card image={buildUrl("/leak_fuge.webp")} title="FUGAS DE GAS" description="Reparamos tuberías dañadas, y las sustituímos en caso necesario. Todo de una forma limpia, y rápida." />
+		<Card image={buildUrl("/plumbering_gr.webp")} title="FUGAS DE AGUA" description="Reparamos todo tipo de fugas de agua, roturas, y averías que usted pueda sufrir en su suministro de agua." />
+		<Card image={buildUrl("/24h.webp")} title="DISPONIBILIDAD 24H" description="Estamos disponibles las 24 horas del día, y 7 días a la semana. Le ofrecemos soluciones cuando más lo necesita." />
 	</div>
 </div>
 </div>

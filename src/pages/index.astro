@@ -8,6 +8,8 @@ import CallNow from "../components/CallNow.astro";
 import SectionOne from "../components/SectionOne.astro";
 import Hero from "../components/Hero.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import { buildUrl } from '../helpers/url';
 ---
 
 <!doctype html>
@@ -22,22 +24,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				title="¡MAS DE 30 AÑOS DE EXPERIENCIA!"
 				description="¡Ponte en contacto con nosotros y olvídate de las preocupaciones!"
 				button="CONTÁCTENOS"
-				link="/contacto"
-				image="/dumb.webp"
+				link={buildUrl('/contacto')}
+				image={buildUrl('/dumb.webp')}
 				alt="Worker"
 			/>
 
 			<CardSection title="SERVICIO DE FONTANERÍA 24H EN MADRID" />
 
-			<CallNow title="¡Soluciones inmediatas con solo una llamada!" button="¡LLAMA YA!" link="/contacto" />
+			<CallNow title="¡Soluciones inmediatas con solo una llamada!" button="¡LLAMA YA!" link={buildUrl('/contacto')} />
 
 			<SectionOne 
 				title="NUESTROS TRABAJOS"
 				subtitle="Fontanería especializada de un complejo industrial"
 				description="¡Optimizamos tu sistema de tuberías! Nuestro equipo realizó una reforma integral, instalando tuberías nuevas y mejorando la eficiencia del sistema. Utilizamos materiales de alta calidad para asegurar un rendimiento duradero y sin fugas. Confía en nuestra experiencia para instalaciones industriales robustas y eficientes."
 				button="¡Vea nuestros trabajos!"
-				link="/proyectos"
-				image="/gallery/IMG-20240711-WA0019.webp"
+				link={buildUrl('/proyectos')}
+				image={buildUrl('/gallery/IMG-20240711-WA0019.webp')}
 			/>
 		</main>
 		<Footer />
