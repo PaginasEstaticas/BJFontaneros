@@ -1,8 +1,11 @@
 ---
+import { buildUrl } from '../helpers/url';
+
 const { title, button, link } = Astro.props;
+const coverURL = buildUrl('/pattern_1080.webp');
 ---
 
-<div class="flag-button parallax">
+<div class="flag-button parallax" style={"--background-image: url(" + coverURL + ");"}>
 	<div class="container px-2 py-5">
 		<h2 class="mb-4 text-light">{ title }</h2>
 		<a class="btn btn-outline-secondary my-3 contact-btn" href={ link } role="button">{ button }</a>
@@ -16,8 +19,5 @@ const { title, button, link } = Astro.props;
 	.contact-btn {
 		width: 80%;
 		max-width: 360px;
-	}
-	.parallax {
-		--background-image: url('/pattern_1080.webp')
 	}
 </style>

@@ -1,5 +1,5 @@
 ---
- const { title, description, images } = Astro.props
+ const { title, description, images, id } = Astro.props
 ---
 
 <div class="wrapper bg-gray">
@@ -16,12 +16,12 @@
 				  class="img-fluid p-2" 
 				  alt={image.alt} 
 				  data-bs-toggle="modal" 
-				  data-bs-target={`#imageModal${index}`} 
+				  data-bs-target={`#imageModal${id}${index}`} 
 				  style={{ cursor: "pointer" }} 
 				/>
 				<div 
 				  class="modal fade" 
-				  id={`imageModal${index}`} 
+				  id={`imageModal${id}${index}`} 
 				  tabindex="-1" 
 				  aria-labelledby={`imageModalLabel${index}`} 
 				  aria-hidden="true"

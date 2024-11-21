@@ -32,7 +32,10 @@
 
 .section-title {
 	color: $primary;
-	font-size: 3.2rem;
+}
+
+.emptySpaceContact {
+	display: none;
 }
 
 @media only screen and (max-device-width: 1024px) {
@@ -57,4 +60,20 @@
 	.parallax {
 		text-align: center;
 	}
+
+	.emptySpaceContact {
+		display: block;
+		height: 3.5rem;
+	}
 }
+
+@include media-breakpoint-down(sm) {
+	.display-5 {
+		font-size: 1.8rem !important;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	
+}
+

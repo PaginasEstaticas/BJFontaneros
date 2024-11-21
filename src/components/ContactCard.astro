@@ -2,7 +2,7 @@
 	const { title, description, type, url } = Astro.props
 ---
 
-<h2 class="fw-bold section-title pb-4 pt-4">{ title }</h2>
+<h2 class="fw-bold fs-1 section-title pb-4 pt-4">{ title }</h2>
 <p class="pb-3">{ description }</p>
 {type === "whatsapp" && 
 	<a href={ "https://wa.me/" + url } class="btn btn-primary w-100" aria-label="Whatsapp">Whatsapp</a>
@@ -13,6 +13,6 @@
 
 <style lang="scss">
 	.section-title {
-		font-size: 2.8rem !important;
+		// font-size: 2.8rem !important;
 	}
 </style>

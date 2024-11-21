@@ -67,7 +67,7 @@ const pages = [
 							  <a 
 								href={page.href} 
 								class={
-								  page.name === 'Contacto' 
+								  page.name === "Contacto"
 									? (currentPath === page.href ? 'nav-link active' : 'nav-link btn btn-outline-primary contact-link')
 									: (currentPath === page.href ? 'nav-link active' : 'nav-link')
 								}
@@ -96,7 +96,7 @@ const pages = [
 				transition: none !important;
 			}
 
-			&.show {
+			&.show, &.showing {
 				& .active::after {
 					content: "";
 					position: absolute;
@@ -110,13 +110,14 @@ const pages = [
 				.contact-link {
 					width: 100% !important;
 					margin-top: 1rem;
+					margin-left: 0.5rem;
 
 					&::after {
 						display: none;
 					}
 				}
 			}
-			&:not(.show) {
+			&:not(.show, .showing) {
 				& .active::after {
 					content: "";
 					position: absolute;
