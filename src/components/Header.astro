@@ -2,7 +2,8 @@
 import { SITE_TITLE } from "../consts";
 import { buildUrl } from '../helpers/url';
 
-const currentPath = Astro.url.pathname;
+const realPath = Astro.url.pathname;
+const currentPath = realPath === '/' ? '/' : realPath.replace(/\/$/, '');
 
 let rootUrl = buildUrl("/");
 if (rootUrl === "//") {
@@ -10,9 +11,9 @@ if (rootUrl === "//") {
 }
 const pages = [
 	{ name: "Fontanería", href: rootUrl },
-	{ name: "Reformas", href: buildUrl("/reformas") + "" },
-	{ name: "Proyectos", href: buildUrl("/proyectos") + "" },
-	{ name: "Contacto", href: buildUrl("/contacto") + "" },
+	{ name: "Reformas", href: buildUrl("/reformas")},
+	{ name: "Proyectos", href: buildUrl("/proyectos")},
+	{ name: "Contacto", href: buildUrl("/contacto")},
 ];
 ---
 
@@ -69,7 +70,7 @@ const pages = [
 						{pages.map(page => (
 							<li>
 							  <a
-								href={page.href} 
+								href={page.href}
 								class={
 								  page.name === "Contacto"
 									? (currentPath === page.href ? 'nav-link active' : 'nav-link btn btn-outline-primary contact-link')
