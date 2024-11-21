@@ -5,10 +5,10 @@ import { buildUrl } from '../helpers/url';
 
 const currentPath = Astro.url.pathname;
 const pages = [
-	{ name: "Fontanería", href: buildUrl("/") },
-	{ name: "Reformas", href: buildUrl("/reformas") },
-	{ name: "Proyectos", href: buildUrl("/proyectos") },
-	{ name: "Contacto", href: buildUrl("/contacto") },
+	{ name: "Fontanería", href: buildUrl("/").replace(/\/$/, "") },
+	{ name: "Reformas", href: buildUrl("/reformas") + "/" },
+	{ name: "Proyectos", href: buildUrl("/proyectos") + "/" },
+	{ name: "Contacto", href: buildUrl("/contacto") + "/" },
 ];
 ---
 
@@ -64,7 +64,7 @@ const pages = [
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 						{pages.map(page => (
 							<li>
-							  <a 
+							  <a
 								href={page.href} 
 								class={
 								  page.name === "Contacto"
