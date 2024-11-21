@@ -71,6 +71,9 @@
 	.display-5 {
 		font-size: 1.8rem !important;
 	}
+	.card-title {
+		font-size: 1rem !important;
+	}
 }
 
 @include media-breakpoint-down(md) {

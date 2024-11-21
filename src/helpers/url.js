@@ -1,4 +1,4 @@
 export function buildUrl(path) {
-	return `${import.meta.env.BASE_URL}${path}`;
-  }
-  
+    const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+    return `${baseUrl}${path}`;
+}

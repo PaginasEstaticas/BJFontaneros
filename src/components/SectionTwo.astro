@@ -18,6 +18,7 @@
 				  data-bs-toggle="modal" 
 				  data-bs-target={`#imageModal${id}${index}`} 
 				  style={{ cursor: "pointer" }} 
+				  loading="lazy"
 				/>
 				<div 
 				  class="modal fade" 
@@ -33,6 +34,7 @@
 						  src={image.src} 
 						  class="img-fluid" 
 						  alt={image.alt} 
+						  loading="lazy"
 						/>
 					  </div>
 					</div>

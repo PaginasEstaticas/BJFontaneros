@@ -10,9 +10,10 @@ const { title, description, button, link, images, id } = Astro.props
 					class={`carousel-item ${index === 0 ? "active" : ""}`} 
 				>
 					<img 
-					src={image.src} 
-					class="d-block w-100" 
-					alt={image.alt} 
+						src={image.src} 
+						class="d-block w-100" 
+						alt={image.alt} 
+						loading="lazy"
 					/>
 				</div>
 				))}
