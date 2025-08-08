@@ -9,7 +9,15 @@ const { title, button, link } = Astro.props;
 				<h2 class="text-dark display-4 fw-light">{ title }</h2>
 			</div>
 			<div class="col">
-				<a class="btn btn-primary my-3 more-btn" href={ link } role="button">{ button }</a>
+				<a 
+					class="btn btn-primary my-3 more-btn" 
+					href={ link } 
+					target="_blank"
+					rel="noopener noreferrer"
+					role="button"
+				>
+					{ button }
+				</a>
 			</div>
 		</div>
 	</div>

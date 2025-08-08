@@ -22,13 +22,13 @@ const pages = [
 		<div class="container-fluid">
 			<a class="navbar-brand fw-light" href={buildUrl("/")}>
 				<img
-					src={buildUrl("/brand.svg")}
-					alt="BJ"
-					width="40"
+					src={buildUrl("/logo.png")}
+					alt="Reformas B & J en Madrid"
+					width="100"
 					height="40"
 					class="d-inline-block align-text-center"
 				/>
-				<span>{SITE_TITLE}</span>
+				<!-- <span>{SITE_TITLE}</span> -->
 			</a>
 			<button
 				class="navbar-toggler"
@@ -91,7 +91,8 @@ const pages = [
 
 <style lang="scss">
 	.navbar-brand > span, .offcanvas-title > span {
-		margin-left: .65rem;
+		// margin-left: .65rem;
+		display: none;
 	}
 
 	header {
