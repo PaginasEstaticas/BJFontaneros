@@ -1,68 +1,52 @@
-# Astro Starter Kit: Blog
+# B & J Fontaneros
 
-```sh
-npm create astro@latest -- --template blog
-```
+Sitio web estático para BJFontaneros, un servicio profesional de fontanería ubicado en Benito Juárez, CDMX. Este proyecto fue desarrollado utilizando Astro, un moderno framework para construir sitios rápidos, optimizados y fáciles de mantener.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 🌐 Sitio en producción
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Puedes visitar el sitio en: [bjfontaneros.com](https://bjfontaneros.com/)
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## 🛠️ Tecnologías utilizadas
 
-Features:
+- **Astro**: Framework principal para desarrollo web estático  
+- **SCSS**: Estilos personalizados  
+- **TypeScript**: Tipado estático para mayor robustez  
+- **Markdown/MDX**: Para contenido estructurado  
+- **GitHub Pages**: Despliegue automático  
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
+## 📦 Estructura del proyecto
 
 Inside of your Astro project, you'll see the following folders and files:
 
 ```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+├── public/ # Archivos estáticos (imágenes, favicon, etc.) 
+├── src/ │ 
+├── components/ # Componentes reutilizables │ 
+├── content/ # Contenido en Markdown/MDX │ 
+├── layouts/ # Plantillas base 
+│ └── pages/ # Páginas del sitio 
+├── astro.config.mjs # Configuración de Astro 
+├── package.json # Dependencias y scripts 
+├── tsconfig.json # Configuración de TypeScript 
+└── README.md # Este archivo
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Funcionalidades destacadas
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- ✅ SEO optimizado (OpenGraph, canonical URLs)  
+- ✅ Rendimiento 100/100 en Lighthouse  
+- ✅ Soporte para RSS y sitemap  
+- ✅ Despliegue automatizado con GitHub Actions  
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## 📦 Comandos útiles
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm install         # Instala dependencias
+npm run dev         # Inicia servidor local en localhost:4321
+npm run build       # Genera la versión de producción en /dist
+npm run preview     # Previsualiza el sitio antes de desplegar
+```
 
-## 🧞 Commands
+## 👥 Créditos
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Desarrollado por Estasleyendoesto
