@@ -1,11 +1,28 @@
 ---
+import { buildUrl } from "../helpers/url"
+import SectionTwoMod from "./SectionTwoMod.astro"
+
  const { title, subtitle, description, button, link, image, alt } = Astro.props
 ---
 
 <div class="wrapper bg-gray pb-5">
 	<div class="container px-2 py-5">
-		<h2 class="fw-bold section-title pb-5 pt-2 fs-1">{ title }</h2>
-		<div class="row align-items-center">
+		<h2 class="fw-bold section-title pb-4 pt-2 fs-1">{ title }</h2>
+		
+		<SectionTwoMod
+			title="¡Cambio de plato de ducha en solo dos días, sin obras largas!"
+			description="Transformamos tu ducha en tiempo récord con nuestro servicio profesional de cambio de plato de ducha en Madrid. Nos encargamos de todo: retirada del plato antiguo, instalación del nuevo, impermeabilización y acabados de alta calidad. Utilizamos materiales resistentes, grandes losas y diseños modernos que amplían visualmente el espacio y aportan un toque elegante a tu baño."
+			images={[
+				{src:buildUrl("/gallery/IMG-20240919-WA0017.webp"), alt:"modernización de baño"},
+				{src:buildUrl("/gallery/IMG-20240919-WA0012.webp"), alt:"modernización de baño"},
+				{src:buildUrl("/gallery/IMG-20240919-WA0002.webp"), alt:"modernización de baño"},
+			]}
+			id="pack3"
+		/>
+			
+		<div class="bg-gray" style="padding: 2rem 0; margin: 0;"></div>
+
+		<div class="row align-items-center px-1">
 			<div class="col-12 col-lg-6">
 				<img 
 					src={ image } 
@@ -16,7 +33,7 @@
 			</div>
 			<div class="col-12 col-lg-6">
 				<div class="row align-items-center">
-					<h3 class="fs-1 pt-3 pb-4 text-primary">{subtitle}</h3>
+					<h3 class="fs-1 pt-3 pb-4 text-primary fw-semibold">{subtitle}</h3>
 					<p>{description }</p>
 					<a class="btn btn-primary mt-4" href={ link } role="button">{ button }</a>
 				</div>

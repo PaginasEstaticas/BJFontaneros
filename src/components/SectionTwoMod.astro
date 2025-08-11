@@ -1,0 +1,52 @@
+---
+ const { title, description, images, id } = Astro.props
+---
+
+<div class="wrapper bg-gray">
+	<div class="container">
+		<div class="row">
+			<h3 class="fs-1 pt-3 pb-3 px-0 text-primary fw-semibold">{ title }</h3>
+			<p class="px-0">{ description }</p>
+		</div>
+		<div class="row py-3">
+			{images.map((image, index) => (
+			  <div class="col-6 col-md px-1">
+				<img 
+				  src={image.src} 
+				  class="img-fluid py-2" 
+				  alt={image.alt} 
+				  data-bs-toggle="modal" 
+				  data-bs-target={`#imageModal${id}${index}`} 
+				  style={{ cursor: "pointer" }} 
+				  loading="lazy"
+				/>
+				<div 
+				  class="modal fade" 
+				  id={`imageModal${id}${index}`} 
+				  tabindex="-1" 
+				  aria-labelledby={`imageModalLabel${index}`} 
+				  aria-hidden="true"
+				>
+				  <div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+					  <div class="modal-body p-0">
+						<img 
+						  src={image.src} 
+						  class="img-fluid" 
+						  alt={image.alt} 
+						  loading="lazy"
+						/>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			))}
+		  </div>
+
+	</div>
+</div>
+
+<style lang="scss">
+
+</style>
