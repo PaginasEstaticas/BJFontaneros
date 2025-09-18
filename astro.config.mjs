@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	// site: 'https://paginasestaticas.github.io/BJFontaneros/',
 	// base: '/BJFontaneros',
-	site: 'https://bjfontaneros.com/',
+	site: 'https://bjreformas.com/',
 	integrations: [sitemap()],
 });
