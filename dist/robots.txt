@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bjfontaneros.com/sitemap-index.xml
+Sitemap: https://bjreformas.com/sitemap-index.xml

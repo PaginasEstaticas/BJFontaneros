@@ -1,10 +1,10 @@
-# B & J Fontaneros
+# B & J Reformas
 
-Sitio web estático para BJFontaneros, un servicio profesional de fontanería ubicado en Benito Juárez, CDMX. Este proyecto fue desarrollado utilizando Astro, un moderno framework para construir sitios rápidos, optimizados y fáciles de mantener.
+Sitio web estático para BJReformas, un servicio profesional de fontanería ubicado en Benito Juárez, CDMX. Este proyecto fue desarrollado utilizando Astro, un moderno framework para construir sitios rápidos, optimizados y fáciles de mantener.
 
 ## 🌐 Sitio en producción
 
-Puedes visitar el sitio en: [bjfontaneros.com](https://bjfontaneros.com/)
+Puedes visitar el sitio en: [bjreformas.com](https://bjreformas.com/)
 
 ## 🛠️ Tecnologías utilizadas
 
