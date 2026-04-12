@@ -1,0 +1,174 @@
+---
+
+---
+
+<div class="wrapper bg-gray pb-5 pt-4">
+    <div class="container px-4 py-2">
+        <form
+            id="webform957647000000719152"
+            action="https://crm.zoho.eu/crm/WebToLeadForm"
+            method="POST"
+            onsubmit="return checkMandatory()"
+            accept-charset="UTF-8"
+            class="zoho-form"
+        >
+            <input
+                type="hidden"
+                name="xnQsjsdp"
+                value="eadcc4d839e27ff28749dca12b80348694d6ea1a6ef65e3354715ea21adb9beb"
+            />
+            <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+            <input
+                type="hidden"
+                name="xmIwtLD"
+                value="1a61929e8bc0da00cf1a1824a6d0a8a53ea2c33ba8c72782bd37b4a72cdb993df95d52a0f8a94d0a66307d15d1e9d549"
+            />
+            <input type="hidden" name="actionType" value="TGVhZHM=" />
+            <input type="hidden" name="returnURL" value="null" />
+            <input type="hidden" name="aG9uZXlwb3Q" value="" />
+
+            <div class="form-header text-center mb-5">
+                <h2 class="fw-bold text-dark">¿Cómo podemos ayudarte?</h2>
+                <p class="text-muted">
+                    Déjanos tus datos y te contactaremos en menos de 24h.
+                </p>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"
+                    >Nombre <span class="text-danger">*</span></label
+                >
+                <input
+                    type="text"
+                    name="Company"
+                    class="form-control"
+                    required
+                />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"
+                    >Teléfono <span class="text-danger">*</span></label
+                >
+                <input
+                    type="text"
+                    name="Last Name"
+                    class="form-control"
+                    required
+                />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Correo electrónico</label>
+                <input
+                    type="email"
+                    name="Email"
+                    class="form-control"
+                    maxlength="100"
+                />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input
+                    type="text"
+                    name="First Name"
+                    class="form-control"
+                    maxlength="40"
+                />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tipo de servicio</label>
+                <select name="Industry" class="form-select form-select-lg">
+                    <!-- <option value="-None-">-Seleccione-</option> -->
+                    <option value="Reforma" selected>Reforma</option>
+                    <option value="Reparación">Reparación</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                    <option value="Información">Información</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fuente</label>
+                <select name="Lead Source" class="form-select form-select-lg">
+                    <!-- <option value="-None-">-Seleccione-</option> -->
+                    <option value="Whatsapp" selected>Whatsapp</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="TikTok">TikTok</option>
+                    <option value="Referido">Referido</option>
+                    <option value="Google">Google</option>
+                    <option value="Web">Web</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Cuéntanos qué necesitas</label>
+                <textarea name="Description" class="form-control" rows="3"
+                ></textarea>
+            </div>
+
+            <div class="mb-3 d-flex justify-content-start gap-3">
+                <button
+                    type="reset"
+                    class="btn btn-light px-4 py-2 text-muted limpiar-btn"
+                    >Limpiar</button
+                >
+                <button
+                    type="submit"
+                    class="btn btn-primary px-4 py-2 fw-bold shadow-blue"
+                    >Enviar Solicitud</button
+                >
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .zoho-form {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fafafaaf;
+        border-radius: 10px;
+        padding: 48px 72px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .limpiar-btn {
+        border-color: #d4d4d4;
+    }
+</style>
+
+<script>
+    function checkMandatory() {
+        var form = document.forms["webform957647000000719152"];
+        var mndFields = ["Company", "Last Name"];
+        var labels = ["Nombre", "Teléfono"];
+
+        // Validar campos obligatorios
+        for (var i = 0; i < mndFields.length; i++) {
+            var field = form[mndFields[i]];
+            if (!field.value.trim()) {
+                alert(labels[i] + " no puede estar vacío.");
+                field.focus();
+                return false;
+            }
+        }
+
+        // Validar Email si se ha rellenado
+        var email = form["Email"].value;
+        if (email.trim().length > 0) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(email)) {
+                alert("Introduzca una dirección de correo electrónico válida.");
+                form["Email"].focus();
+                return false;
+            }
+        }
+
+        // Bloquear botón para evitar múltiples envíos
+        form.querySelector('button[type="submit"]').disabled = true;
+        return true;
+    }
+</script>

@@ -1,19 +1,20 @@
 ---
 import { SITE_TITLE } from "../consts";
-import { buildUrl } from '../helpers/url';
+import { buildUrl } from "../helpers/url";
 
 const realPath = Astro.url.pathname;
-const currentPath = realPath === '/' ? '/' : realPath.replace(/\/$/, '');
+const currentPath = realPath === "/" ? "/" : realPath.replace(/\/$/, "");
 
 let rootUrl = buildUrl("/");
 if (rootUrl === "//") {
-	rootUrl = rootUrl.replace(/\/$/, "")
+	rootUrl = rootUrl.replace(/\/$/, "");
 }
 const pages = [
 	{ name: "Fontanería", href: rootUrl },
-	{ name: "Reformas", href: buildUrl("/reformas")},
-	{ name: "Proyectos", href: buildUrl("/proyectos")},
-	{ name: "Contacto", href: buildUrl("/contacto")},
+	{ name: "Reformas", href: buildUrl("/reformas") },
+	{ name: "Proyectos", href: buildUrl("/proyectos") },
+	{ name: "Presupuestos", href: buildUrl("/presupuestos") },
+	{ name: "Contacto", href: buildUrl("/contacto") },
 ];
 ---
 
@@ -47,7 +48,10 @@ const pages = [
 				aria-labelledby="offcanvasNavbarLabel"
 			>
 				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-light" id="offcanvasNavbarLabel">
+					<h5
+						class="offcanvas-title fw-light"
+						id="offcanvasNavbarLabel"
+					>
 						<img
 							src={buildUrl("/brand.svg")}
 							alt="BJ"
@@ -67,21 +71,31 @@ const pages = [
 				</div>
 				<div class="offcanvas-body">
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-						{pages.map(page => (
-							<li>
-							  <a
-								href={page.href}
-								class={
-								  page.name === "Contacto"
-									? (currentPath === page.href ? 'nav-link active' : 'nav-link btn btn-outline-primary contact-link')
-									: (currentPath === page.href ? 'nav-link active' : 'nav-link')
-								}
-								aria-current={currentPath === page.href ? "page" : undefined}
-							  >
-								{page.name}
-							  </a>
-							</li>
-						  ))}
+						{
+							pages.map((page) => (
+								<li>
+									<a
+										href={page.href}
+										class={
+											page.name === "Contacto"
+												? currentPath === page.href
+													? "nav-link active"
+													: "nav-link btn btn-outline-primary contact-link"
+												: currentPath === page.href
+													? "nav-link active"
+													: "nav-link"
+										}
+										aria-current={
+											currentPath === page.href
+												? "page"
+												: undefined
+										}
+									>
+										{page.name}
+									</a>
+								</li>
+							))
+						}
 					</ul>
 				</div>
 			</div>
@@ -90,7 +104,8 @@ const pages = [
 </header>
 
 <style lang="scss">
-	.navbar-brand > span, .offcanvas-title > span {
+	.navbar-brand > span,
+	.offcanvas-title > span {
 		// margin-left: .65rem;
 		display: none;
 	}
@@ -102,7 +117,8 @@ const pages = [
 				transition: none !important;
 			}
 
-			&.show, &.showing {
+			&.show,
+			&.showing {
 				& .active::after {
 					content: "";
 					position: absolute;
