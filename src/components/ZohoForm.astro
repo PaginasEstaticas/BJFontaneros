@@ -1,5 +1,9 @@
 ---
+import Icon from "../components/Icon.astro";
+import { buildUrl } from "../helpers/url";
 
+const { origin } = Astro.url;
+const returnPath = `${origin}/gracias`;
 ---
 
 <div class="wrapper bg-gray pb-5 pt-4">
@@ -8,30 +12,45 @@
             id="webform957647000000719152"
             action="https://crm.zoho.eu/crm/WebToLeadForm"
             method="POST"
-            onsubmit="return checkMandatory()"
             accept-charset="UTF-8"
             class="zoho-form"
         >
             <input
                 type="hidden"
                 name="xnQsjsdp"
-                value="eadcc4d839e27ff28749dca12b80348694d6ea1a6ef65e3354715ea21adb9beb"
+                value="de7c1d8332d6a1806647bf4c30f4a55af6b4e15094a38be5b693ae6d693bbb31"
             />
             <input type="hidden" name="zc_gad" id="zc_gad" value="" />
             <input
                 type="hidden"
                 name="xmIwtLD"
-                value="1a61929e8bc0da00cf1a1824a6d0a8a53ea2c33ba8c72782bd37b4a72cdb993df95d52a0f8a94d0a66307d15d1e9d549"
+                value="b9ba130e93624e33e2df5b1b1ef42736051d5e5f43622cde11b0e02bcffcd3388fdf116efe589692eb9ec4d031b0b00c"
             />
             <input type="hidden" name="actionType" value="TGVhZHM=" />
-            <input type="hidden" name="returnURL" value="null" />
+            <input type="hidden" name="returnURL" value={returnPath} />
             <input type="hidden" name="aG9uZXlwb3Q" value="" />
+
+            <select style="display:none;" name="Lead Status">
+                <option selected value="No contactado">No contactado</option>
+            </select>
+
+            <!-- **********************************  -->
 
             <div class="form-header text-center mb-5">
                 <h2 class="fw-bold text-dark">¿Cómo podemos ayudarte?</h2>
                 <p class="text-muted">
                     Déjanos tus datos y te contactaremos en menos de 24h.
                 </p>
+                <div class="d-flex justify-content-center">
+                    <a
+                        href="https://wa.me/34689766329"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-whatsapp"
+                    >
+                        <Icon name="whatsapp" class="icon-social" />
+                    </a>
+                </div>
             </div>
 
             <div class="mb-3">
@@ -40,7 +59,7 @@
                 >
                 <input
                     type="text"
-                    name="Company"
+                    name="First Name"
                     class="form-control"
                     required
                 />
@@ -59,6 +78,16 @@
             </div>
 
             <div class="mb-3">
+                <label class="form-label">Dirección - Ciudad</label>
+                <input
+                    type="text"
+                    name="Address - City"
+                    class="form-control"
+                    maxlength="255"
+                />
+            </div>
+
+            <div class="mb-3">
                 <label class="form-label">Correo electrónico</label>
                 <input
                     type="email"
@@ -69,20 +98,10 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Dirección</label>
-                <input
-                    type="text"
-                    name="First Name"
-                    class="form-control"
-                    maxlength="40"
-                />
-            </div>
-
-            <div class="mb-3">
                 <label class="form-label">Tipo de servicio</label>
                 <select name="Industry" class="form-select form-select-lg">
-                    <!-- <option value="-None-">-Seleccione-</option> -->
-                    <option value="Reforma" selected>Reforma</option>
+                    <option value="-None-" selected>-None-</option>
+                    <option value="Reforma">Reforma</option>
                     <option value="Reparación">Reparación</option>
                     <option value="Mantenimiento">Mantenimiento</option>
                     <option value="Información">Información</option>
@@ -90,16 +109,15 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Fuente</label>
+                <label class="form-label">¿Cómo nos conociste?</label>
                 <select name="Lead Source" class="form-select form-select-lg">
-                    <!-- <option value="-None-">-Seleccione-</option> -->
-                    <option value="Whatsapp" selected>Whatsapp</option>
+                    <option value="-None-" selected>-None-</option>
+                    <option value="Whatsapp">Whatsapp</option>
                     <option value="Instagram">Instagram</option>
                     <option value="TikTok">TikTok</option>
                     <option value="Referido">Referido</option>
                     <option value="Google">Google</option>
                     <option value="Web">Web</option>
-                    <option value="Otro">Otro</option>
                 </select>
             </div>
 
@@ -111,15 +129,16 @@
 
             <div class="mb-3 d-flex justify-content-start gap-3">
                 <button
-                    type="reset"
-                    class="btn btn-light px-4 py-2 text-muted limpiar-btn"
-                    >Limpiar</button
-                >
-                <button
                     type="submit"
                     class="btn btn-primary px-4 py-2 fw-bold shadow-blue"
                     >Enviar Solicitud</button
                 >
+            </div>
+
+            <div class="mt-4">
+                <p class="text-left text-muted fs-6 fst-italic">
+                    <small> *Trabajamos en Madrid y alrededores.</small>
+                </p>
             </div>
         </form>
     </div>
@@ -138,37 +157,61 @@
     .limpiar-btn {
         border-color: #d4d4d4;
     }
+
+    .btn-whatsapp {
+        background-color: #25d366;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 43px;
+        height: 43px;
+        border-radius: 10%;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 </style>
 
 <script>
-    function checkMandatory() {
-        var form = document.forms["webform957647000000719152"];
-        var mndFields = ["Company", "Last Name"];
-        var labels = ["Nombre", "Teléfono"];
+    // Manejo del evento de envío de forma moderna en Astro
+    const form = document.getElementById(
+        "webform957647000000719152",
+    ) as HTMLFormElement;
 
-        // Validar campos obligatorios
-        for (var i = 0; i < mndFields.length; i++) {
-            var field = form[mndFields[i]];
-            if (!field.value.trim()) {
-                alert(labels[i] + " no puede estar vacío.");
-                field.focus();
-                return false;
-            }
+    form?.addEventListener("submit", (e) => {
+        const firstName = (
+            form.elements.namedItem("First Name") as HTMLInputElement
+        ).value;
+        const lastName = (
+            form.elements.namedItem("Last Name") as HTMLInputElement
+        ).value;
+        const email = (form.elements.namedItem("Email") as HTMLInputElement)
+            .value;
+        const submitBtn = form.querySelector(
+            'button[type="submit"]',
+        ) as HTMLButtonElement;
+
+        // Validar obligatorios manualmente por si falla el 'required' nativo
+        if (!firstName.trim() || !lastName.trim()) {
+            alert("Nombre y Teléfono son obligatorios.");
+            e.preventDefault();
+            return;
         }
 
-        // Validar Email si se ha rellenado
-        var email = form["Email"].value;
+        // Validar Email
         if (email.trim().length > 0) {
-            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regex.test(email)) {
-                alert("Introduzca una dirección de correo electrónico válida.");
-                form["Email"].focus();
-                return false;
+                alert("Introduzca un correo válido.");
+                e.preventDefault();
+                return;
             }
         }
 
-        // Bloquear botón para evitar múltiples envíos
-        form.querySelector('button[type="submit"]').disabled = true;
-        return true;
-    }
+        // Evitar doble envío
+        if (submitBtn) submitBtn.disabled = true;
+    });
 </script>

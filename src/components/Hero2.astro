@@ -1,20 +1,23 @@
 ---
-import { buildUrl } from '../helpers/url';
+import { buildUrl } from "../helpers/url";
 
-const { title, description } = Astro.props
-const coverURL = buildUrl('/cover.webp');
+const { title, description } = Astro.props;
+const coverURL = buildUrl("/cover.webp");
 ---
 
 <div class="parallax bb-1" style={"--background-image: url(" + coverURL + ");"}>
 	<div class="container px-2 py-2">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5 pb-3">
 			<div class="col-12 hero-info">
-				<h1 class="display-5 fw-bold lh-1 mb-3 text-light lh-base text-center">
-					{ title }
+				<h1
+					class="display-5 fw-bold lh-1 mb-3 text-light lh-base text-center"
+				>
+					{title}
 				</h1>
 				<p class="lead text-light fs-3 text-center">
-					{ description }
+					{description}
 				</p>
+				<slot />
 			</div>
 		</div>
 	</div>
@@ -22,6 +25,6 @@ const coverURL = buildUrl('/cover.webp');
 
 <style lang="scss">
 	.bb-1 {
-		border-bottom: 10px solid var(--bs-primary); 
+		border-bottom: 10px solid var(--bs-primary);
 	}
 </style>
