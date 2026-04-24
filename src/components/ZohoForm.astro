@@ -53,7 +53,7 @@ const returnPath = `${origin}/gracias`;
                 </div>
             </div>
 
-            <input type="hidden" name="Lead Status" value="" />
+            <!-- <input type="hidden" name="Lead Status" value="" /> -->
 
             <div class="mb-3">
                 <label class="form-label"
@@ -71,12 +71,12 @@ const returnPath = `${origin}/gracias`;
             <!-- <label class="form-label"
                     >Apellidos <span class="text-danger">*</span></label
                 > -->
-            <input
+            <!-- <input
                 type="hidden"
                 name="Last Name"
                 class="form-control"
                 value=""
-            />
+            /> -->
             <!-- </div> -->
 
             <div class="mb-3">
@@ -194,17 +194,20 @@ const returnPath = `${origin}/gracias`;
         const firstName = (
             form.elements.namedItem("First Name") as HTMLInputElement
         ).value;
-        const lastName = (form.elements.namedItem("Phone") as HTMLInputElement)
+        const phone = (form.elements.namedItem("Phone") as HTMLInputElement)
             .value;
         const email = (form.elements.namedItem("Email") as HTMLInputElement)
             .value;
-        const submitBtn = form.querySelector(
-            'button[type="submit"]',
+        const lastNameHidden = document.getElementById(
+            "last_name_hidden",
+        ) as HTMLInputElement;
+        const submitBtn = document.getElementById(
+            "submit-btn",
         ) as HTMLButtonElement;
 
         // Extra 'required'
-        if (!firstName.trim() || !lastName.trim()) {
-            alert("Nombre y Teléfono son obligatorios.");
+        if (!firstName.trim() || !phone.trim()) {
+            alert("El nombre y el teléfono son obligatorios.");
             e.preventDefault();
             return;
         }
@@ -213,7 +216,7 @@ const returnPath = `${origin}/gracias`;
         if (email.trim().length > 0) {
             const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regex.test(email)) {
-                alert("Introduzca un correo válido.");
+                alert("Introduzca un correo electrónico válido.");
                 e.preventDefault();
                 return;
             }
