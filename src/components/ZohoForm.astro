@@ -194,9 +194,8 @@ const returnPath = `${origin}/gracias`;
         const firstName = (
             form.elements.namedItem("First Name") as HTMLInputElement
         ).value;
-        const lastName = (
-            form.elements.namedItem("Last Name") as HTMLInputElement
-        ).value;
+        const lastName = (form.elements.namedItem("Phone") as HTMLInputElement)
+            .value;
         const email = (form.elements.namedItem("Email") as HTMLInputElement)
             .value;
         const submitBtn = form.querySelector(
