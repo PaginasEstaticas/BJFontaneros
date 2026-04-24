@@ -53,7 +53,7 @@ const returnPath = `${origin}/gracias`;
                 </div>
             </div>
 
-            <!-- <input type="hidden" name="Lead Status" value="" /> -->
+            <input type="hidden" name="Lead Status" />
 
             <div class="mb-3">
                 <label class="form-label"
@@ -71,12 +71,7 @@ const returnPath = `${origin}/gracias`;
             <!-- <label class="form-label"
                     >Apellidos <span class="text-danger">*</span></label
                 > -->
-            <!-- <input
-                type="hidden"
-                name="Last Name"
-                class="form-control"
-                value=""
-            /> -->
+            <input type="hidden" name="Last Name" class="form-control" />
             <!-- </div> -->
 
             <div class="mb-3">
@@ -198,9 +193,6 @@ const returnPath = `${origin}/gracias`;
             .value;
         const email = (form.elements.namedItem("Email") as HTMLInputElement)
             .value;
-        const lastNameHidden = document.getElementById(
-            "last_name_hidden",
-        ) as HTMLInputElement;
         const submitBtn = document.getElementById(
             "submit-btn",
         ) as HTMLButtonElement;
