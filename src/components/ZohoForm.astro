@@ -20,19 +20,19 @@ const returnPath = `${origin}/gracias`;
                 name="xnQsjsdp"
                 value="de7c1d8332d6a1806647bf4c30f4a55af6b4e15094a38be5b693ae6d693bbb31"
             />
-            <input type="hidden" name="zc_gad" id="zc_gad" value="" />
             <input
                 type="hidden"
                 name="xmIwtLD"
                 value="b9ba130e93624e33e2df5b1b1ef42736051d5e5f43622cde11b0e02bcffcd3388fdf116efe589692eb9ec4d031b0b00c"
             />
+
             <input type="hidden" name="actionType" value="TGVhZHM=" />
             <input type="hidden" name="returnURL" value={returnPath} />
-            <input type="hidden" name="aG9uZXlwb3Q" value="" />
+            <!-- <input type="hidden" name="aG9uZXlwb3Q" value="" /> -->
 
-            <select style="display:none;" name="Lead Status">
+            <!-- <select style="display:none;" name="Lead Status">
                 <option selected value="No contactado">No contactado</option>
-            </select>
+            </select> -->
 
             <!-- **********************************  -->
 
@@ -53,6 +53,8 @@ const returnPath = `${origin}/gracias`;
                 </div>
             </div>
 
+            <input type="hidden" name="Lead Status" value="No contactado" />
+
             <div class="mb-3">
                 <label class="form-label"
                     >Nombre <span class="text-danger">*</span></label
@@ -65,16 +67,23 @@ const returnPath = `${origin}/gracias`;
                 />
             </div>
 
+            <!-- <div class="mb-3"> -->
+            <!-- <label class="form-label"
+                    >Apellidos <span class="text-danger">*</span></label
+                > -->
+            <input
+                type="hidden"
+                name="Last Name"
+                class="form-control"
+                required
+            />
+            <!-- </div> -->
+
             <div class="mb-3">
                 <label class="form-label"
                     >Teléfono <span class="text-danger">*</span></label
                 >
-                <input
-                    type="text"
-                    name="Last Name"
-                    class="form-control"
-                    required
-                />
+                <input type="text" name="Phone" class="form-control" required />
             </div>
 
             <div class="mb-3">
@@ -176,7 +185,7 @@ const returnPath = `${origin}/gracias`;
 </style>
 
 <script>
-    // Manejo del evento de envío de forma moderna en Astro
+    // form html
     const form = document.getElementById(
         "webform957647000000719152",
     ) as HTMLFormElement;
@@ -194,7 +203,7 @@ const returnPath = `${origin}/gracias`;
             'button[type="submit"]',
         ) as HTMLButtonElement;
 
-        // Validar obligatorios manualmente por si falla el 'required' nativo
+        // Extra 'required'
         if (!firstName.trim() || !lastName.trim()) {
             alert("Nombre y Teléfono son obligatorios.");
             e.preventDefault();
@@ -211,7 +220,7 @@ const returnPath = `${origin}/gracias`;
             }
         }
 
-        // Evitar doble envío
+        // Evita doble envío
         if (submitBtn) submitBtn.disabled = true;
     });
 </script>
