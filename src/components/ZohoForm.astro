@@ -61,7 +61,7 @@ const returnPath = `${origin}/gracias`;
                 >
                 <input
                     type="text"
-                    name="First Name"
+                    name="Last Name"
                     class="form-control"
                     required
                 />
@@ -71,7 +71,7 @@ const returnPath = `${origin}/gracias`;
             <!-- <label class="form-label"
                     >Apellidos <span class="text-danger">*</span></label
                 > -->
-            <input type="hidden" name="Last Name" class="form-control" />
+            <!-- <input type="hidden" name="Last Name" class="form-control" /> -->
             <!-- </div> -->
 
             <div class="mb-3">
@@ -186,8 +186,8 @@ const returnPath = `${origin}/gracias`;
     ) as HTMLFormElement;
 
     form?.addEventListener("submit", (e) => {
-        const firstName = (
-            form.elements.namedItem("First Name") as HTMLInputElement
+        const lastName = (
+            form.elements.namedItem("Last Name") as HTMLInputElement
         ).value;
         const phone = (form.elements.namedItem("Phone") as HTMLInputElement)
             .value;
@@ -198,7 +198,7 @@ const returnPath = `${origin}/gracias`;
         ) as HTMLButtonElement;
 
         // Extra 'required'
-        if (!firstName.trim() || !phone.trim()) {
+        if (!lastName.trim() || !phone.trim()) {
             alert("El nombre y el teléfono son obligatorios.");
             e.preventDefault();
             return;
