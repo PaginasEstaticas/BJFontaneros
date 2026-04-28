@@ -1,6 +1,5 @@
 ---
 import Icon from "../components/Icon.astro";
-import { buildUrl } from "../helpers/url";
 
 const { origin } = Astro.url;
 const returnPath = `${origin}/gracias`;
@@ -28,11 +27,6 @@ const returnPath = `${origin}/gracias`;
 
             <input type="hidden" name="actionType" value="TGVhZHM=" />
             <input type="hidden" name="returnURL" value={returnPath} />
-            <!-- <input type="hidden" name="aG9uZXlwb3Q" value="" /> -->
-
-            <!-- <select style="display:none;" name="Lead Status">
-                <option selected value="No contactado">No contactado</option>
-            </select> -->
 
             <!-- **********************************  -->
 
@@ -66,13 +60,6 @@ const returnPath = `${origin}/gracias`;
                     required
                 />
             </div>
-
-            <!-- <div class="mb-3"> -->
-            <!-- <label class="form-label"
-                    >Apellidos <span class="text-danger">*</span></label
-                > -->
-            <!-- <input type="hidden" name="Last Name" class="form-control" /> -->
-            <!-- </div> -->
 
             <div class="mb-3">
                 <label class="form-label"
@@ -189,8 +176,7 @@ const returnPath = `${origin}/gracias`;
         const lastName = (
             form.elements.namedItem("Last Name") as HTMLInputElement
         ).value;
-        const phone = (form.elements.namedItem("Phone") as HTMLInputElement)
-            .value;
+        const phone = form.elements.namedItem("Phone") as HTMLInputElement;
         const email = (form.elements.namedItem("Email") as HTMLInputElement)
             .value;
         const submitBtn = document.getElementById(
@@ -198,7 +184,7 @@ const returnPath = `${origin}/gracias`;
         ) as HTMLButtonElement;
 
         // Extra 'required'
-        if (!lastName.trim() || !phone.trim()) {
+        if (!lastName.trim() || !phone.value.trim()) {
             alert("El nombre y el teléfono son obligatorios.");
             e.preventDefault();
             return;
@@ -213,6 +199,26 @@ const returnPath = `${origin}/gracias`;
                 return;
             }
         }
+
+        // Validar teléfono
+        let phoneNumber = phone.value.trim().replace(/[\s\-\.]/g, "");
+
+        if (/^[6789]\d{8}$/.test(phoneNumber)) {
+            phoneNumber = "+34" + phoneNumber;
+        } else if (/^34[6789]\d{8}$/.test(phoneNumber)) {
+            phoneNumber = "+" + phoneNumber;
+        }
+
+        const spainPhoneRegex = /^\+34[6789]\d{8}$/;
+        if (!spainPhoneRegex.test(phoneNumber)) {
+            alert(
+                "El número de teléfono no es válido. Debe tener 9 dígitos (ej: 600123123).",
+            );
+            e.preventDefault();
+            return;
+        }
+
+        phone.value = phoneNumber;
 
         // Evita doble envío
         if (submitBtn) submitBtn.disabled = true;
