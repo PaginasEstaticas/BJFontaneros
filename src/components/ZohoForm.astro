@@ -65,7 +65,12 @@ const returnPath = `${origin}/gracias`;
                 <label class="form-label"
                     >Teléfono <span class="text-danger">*</span></label
                 >
-                <input type="text" name="Phone" class="form-control" required />
+                <input
+                    type="text"
+                    name="Mobile"
+                    class="form-control"
+                    required
+                />
             </div>
 
             <div class="mb-3">
@@ -176,7 +181,7 @@ const returnPath = `${origin}/gracias`;
         const lastName = (
             form.elements.namedItem("Last Name") as HTMLInputElement
         ).value;
-        const phone = form.elements.namedItem("Phone") as HTMLInputElement;
+        const phone = form.elements.namedItem("Mobile") as HTMLInputElement;
         const email = (form.elements.namedItem("Email") as HTMLInputElement)
             .value;
         const submitBtn = document.getElementById(
