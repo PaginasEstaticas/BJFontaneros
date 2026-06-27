@@ -184,6 +184,9 @@ const returnPath = `${origin}/gracias`;
         const phone = form.elements.namedItem("Mobile") as HTMLInputElement;
         const email = (form.elements.namedItem("Email") as HTMLInputElement)
             .value;
+        const descriptionElement = form.elements.namedItem(
+            "Description",
+        ) as HTMLTextAreaElement;
         const submitBtn = document.getElementById(
             "submit-btn",
         ) as HTMLButtonElement;
@@ -224,6 +227,14 @@ const returnPath = `${origin}/gracias`;
         }
 
         phone.value = phoneNumber;
+
+        // Concatenar el teléfono a desription
+        if (descriptionElement) {
+            const originalDesc = descriptionElement.value.trim();
+            descriptionElement.value = originalDesc
+                ? `(${phoneNumber}) ${originalDesc}`
+                : `(${phoneNumber})`;
+        }
 
         // Evita doble envío
         if (submitBtn) submitBtn.disabled = true;
