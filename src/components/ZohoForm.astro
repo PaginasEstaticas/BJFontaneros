@@ -229,13 +229,7 @@ const returnPath = `${origin}/gracias`;
 
         phone.value = phoneNumber;
 
-        // Concatenar el teléfono a desription
-        if (descriptionElement) {
-            const originalDesc = descriptionElement.value.trim();
-            descriptionElement.value = originalDesc
-                ? `(${phoneNumber}) ${originalDesc}`
-                : `(${phoneNumber})`;
-        }
+
 
         // Evita doble envío
         if (submitBtn) submitBtn.disabled = true;
